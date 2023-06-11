@@ -1,0 +1,346 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+ol,
+ul {
+	list-style: none;
+}
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* -------------------------------------------------------- */
+
+body {
+	line-height: 1;
+	font-family: 'Montserrat', sans-serif;
+	background: #f0f5f9;
+	color: #1e2022;
+}
+.wrapper {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 6fr;
+	row-gap: 1%;
+	column-gap: 0.5%;
+}
+.sidebar {
+	height: 100vh;
+	background: #c9d6df;
+	padding: 10% 0 0 5%;
+}
+.logo {
+	margin-left: 5%;
+}
+.sidebar h1 {
+	margin-left: 5%;
+}
+.sidebar-item {
+	color: #1e2022;
+	display: flex;
+	gap: 5%;
+	margin-top: 5%;
+	padding: 2%;
+	transition-duration: 0.3s;
+}
+.sidebar-item button {
+	cursor: pointer;
+	border: none;
+	font-size: 1rem;
+	margin-top: 2%;
+	background: #f0f5f9;
+	border-radius: 0.5rem;
+	padding: 1% 9%;
+	transition-duration: 0.1s;
+	box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.sidebar-item button:hover {
+	background: #c9d6df;
+	letter-spacing: 1px;
+	box-shadow: none;
+}
+
+.menu-img {
+	width: 15%;
+}
+.new-book {
+	margin-top: 28%;
+}
+.github-icon {
+	margin-top: 150%;
+}
+.github-icon a {
+	text-decoration: none;
+	color: #1e2022;
+	font-size: 0.8rem;
+	margin-top: 5%;
+}
+.github-icon a:hover {
+	text-decoration: underline;
+}
+.main {
+	width: 80%;
+}
+.title {
+	display: flex;
+	gap: 2%;
+	margin: 3% 0 1% 3%;
+}
+.title-img {
+	width: 4%;
+	height: 4%;
+}
+.title h1 {
+	font-size: 1.3rem;
+	font-weight: 700;
+}
+.title span {
+	font-weight: 200;
+	font-size: 1.6rem;
+}
+.description p {
+	margin-left: 12%;
+	font-size: 0.8rem;
+}
+.description a {
+	text-decoration: none;
+	color: #1e2022;
+	font-weight: 700;
+}
+.btn-login {
+	border: none;
+	cursor: pointer;
+	font-size: 1.2rem;
+	margin: 2% 0 0 11%;
+	background: #0f172a;
+	color: #f0f5f9;
+	padding: 0.5% 2%;
+	border-radius: 1rem;
+	transition-duration: 0.3s;
+}
+.btn-login:hover {
+	background: #94a3b8;
+	color: #0f172a;
+}
+.table {
+	width: 100%;
+	margin-left: 10%;
+	margin-top: 5%;
+}
+th,
+td {
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+th {
+	font-size: 1.2rem;
+	text-align: start;
+	font-weight: 700;
+	border-bottom: 1px solid;
+}
+td:nth-child(1) {
+	width: 40%;
+}
+.delete-btn {
+	border: none;
+	background: #94a3b8;
+	color: #0f172a;
+	border-radius: 1rem;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+}
+.delete-btn:hover {
+	background: #d2001a;
+	color: #f0f5f9;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal {
+	background-color: white;
+	padding: 0.5% 3% 5% 3%;
+	background: #c9d6df;
+	border-radius: 1rem;
+}
+
+.close-btn {
+	color: #fff;
+	background: #1e2022;
+	width: 14%;
+	border-radius: 5rem;
+	margin-left: 98%;
+	margin-top: 5%;
+	font-size: 1.5rem;
+	padding: 0.5%;
+	border: none;
+	cursor: pointer;
+}
+
+.add-book-form {
+	font-size: 1.4rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.add-book-form h3 {
+	margin-top: 15%;
+}
+.input {
+	font-size: 1.2rem;
+	margin: 10% 0 0 10%;
+	border: none;
+}
+.checkbox {
+	width: 20px;
+	height: 20px;
+}
+.is-read {
+	margin-top: 15%;
+}
+.btn-submit {
+	border: none;
+	background: #00dfa2;
+	color: #0f172a;
+	border-radius: 1rem;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	margin-top: 10%;
+}
+.read {
+	color: #00dfa2;
+}
+.unread {
+	color: #d2001a;
+}
+.hide {
+	display: none;
+}
+.show {
+	display: table-row;
+}

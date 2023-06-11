@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;0,700;1,100;1,200;1,400;1,700&family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <section class="sidebar ">
+                <a target="_blank" href="https://icons8.com/icon/48523/library"><img src="images/icons8-library-64.png" alt="" class="logo"></a>
+                <h1>The Reading Nook</h1>
+           
+            <div class="sidebar-item new-book">
+                <img src="images/plus.svg" alt="" class="menu-img">
+                <button class="add-btn">Add new book</button>
+            </div>
+            <div class="sidebar-item">
+                <img src="images/all.svg" alt="" class="menu-img">
+                <button class="all-books-btn">See all books</button>
+            </div>
+            <div class="sidebar-item">
+                <img src="images/unread.svg" alt="" class="menu-img">
+                <button class="book-read-btn">Books read</button>
+            </div>
+            <div class="sidebar-item">
+                <img src="images/read.svg" alt="" class="menu-img">
+                <button class="book-unread-btn">Books unread</button>
+            </div>
+           
+            <div class="sidebar-item github-icon">
+                <img src="images/github.svg" alt="" class="menu-img">
+                <a href="">Project on Github</a>
+            </div>
+        </section>  
+        <section class="main">
+            <div class="description">
+                <div class="title">
+                    <img src="images/avatar.png" alt="" class="title-img">
+                    <h1>Welcome, <br> <span>@user-name</span></h1>
+                </div>
+                <p> This is a  library app made using Java Script (Object Constructors and LocalStorage), part of <a href="https://www.theodinproject.com/" target=”_blank” >The Odin Project.</a></p>
+                <button class="btn-login">Log in</button>
+            </div>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Author
+                        </th>
+                        <th>
+                            Pages
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                        <th>
+                            Remove
+                        </th>
+                    </tr>
+                </tbody>
+                <tbody class="tb-books">
+                    <tr>
+                        <td>The Foundation Trilogy</td>
+                        <td>Isaac Asimov</td>
+                        <td>679</td>
+                        <td class="read">Unread</td>
+                        <td><button class="delete-btn">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>The Sven Hassel Collection</td>
+                        <td>Sven Hasse</td>
+                        <td>4216</td>
+                        <td class="read">Read</td>
+                        <td><button class="delete-btn">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Shogun</td>
+                        <td>James Clavell</td>
+                        <td>1152</td>
+                        <td class="read">Unread</td>
+                        <td><button class="delete-btn">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Dune</td>
+                        <td>Frank Herbert</td>
+                        <td>658</td>
+                        <td class="read">Read</td>
+                        <td><button class="delete-btn">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="overlay" id="overlay">
+        <div class="modal">
+            <form class="add-book-form" id="addBookForm">
+                <button class="close-btn" id="closeFormBtn">&times;</button>
+                <h3>Add new book</h3>
+                <input
+                  class="input"
+                  type="text"
+                  id="title"
+                  placeholder="Title"
+                  required
+                  maxlength="40"
+                />
+                <p class="error-msg" id="errorMsg"></p>
+                <input
+                  class="input"
+                  type="text"
+                  id="author"
+                  placeholder="Author"
+                  required
+                  maxlength="40"
+                />
+                <input
+                  class="input"
+                  type="number"
+                  id="pages"
+                  placeholder="Pages"
+                  required
+                  max="10000"
+                />
+                <div class="is-read">
+                  <label for="is-read">Have you read it?</label>
+                  <input class="checkbox" type="checkbox" id="isRead" />
+                </div>
+                <button class="btn btn-submit" type="submit">Submit</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
