@@ -19,10 +19,7 @@ closeFormButton.addEventListener("click", function () {
 
 
 
-// Add read-unread status to every book
-const tableRows = document.querySelectorAll(".tb-books tr");
-
-//Add books to the library
+//Add books to the library array
 let myLibrary = [];
 
 function Book(title, author, pages, isRead) {
@@ -42,6 +39,7 @@ function addBookToLibrary(title, author, pages, isRead) {
 
 
 
+const tableRows = document.querySelectorAll(".tb-books tr");
 const libraryTableBody = document.querySelector('.tb-books');
 
 function addRowToTable(book, isRead) {
@@ -86,16 +84,12 @@ function addRowToTable(book, isRead) {
         myLibrary.splice(rowIndex, 1);
         console.log(myLibrary);
     });
-
-
     libraryTableBody.appendChild(newRow);
     // console.log(readStatusCell.textContent);
     colorStatus();
-
-
 }
 
-// Submit a new book to the library
+// Submit a new book to the library from the input form
 submitButton.addEventListener("click", function () {
     event.preventDefault();
     const title = document.querySelector("#title").value;
@@ -126,8 +120,8 @@ function colorStatus() {
         }
     });
 }
-colorStatus();
 
+// Delete a book / row
 function deleteRow() {
     deleteBtn.forEach((btn) => {
         btn.addEventListener("click", function () {
@@ -142,10 +136,9 @@ function deleteRow() {
         });
     });
 }
-deleteRow()
 
 
-//Show and hide and delete books
+// Show, hide and delete books
 readBooksBtn.addEventListener("click", function () {
     let rows = document.querySelectorAll(".new-row-class");
     rows.forEach((row) => {
@@ -187,9 +180,9 @@ seeBooksBtn.addEventListener("click", function () {
     });
 });
 
-login.addEventListener("click", function () {
-    console.log(myLibrary[0].isRead);
-});
+// login.addEventListener("click", function () {
+//     console.log(myLibrary);
+// });
 
 
 addBookToLibrary("The Foundation Trilogy", "Isaac Asimov", 679, false);
@@ -200,5 +193,5 @@ addBookToLibrary("The Catcher in the Rye", "J.D. Salinger", "224", true);
 addBookToLibrary("To Kill a Mockingbird", "Harper Lee", "336", false);
 
 
-const book1 = new Book("llll", "ppppp", 12222,);
-addBookToLibrary(book1)
+// const book1 = new Book("llll", "ppppp", 12222,);
+// addBookToLibrary(book1)
