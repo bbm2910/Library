@@ -171,6 +171,7 @@ body {
 	box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 .sidebar-item button:hover {
+	border: 1px solid #f0f5f9;
 	background: #c9d6df;
 	letter-spacing: 1px;
 	box-shadow: none;
@@ -344,6 +345,3 @@ td:nth-child(1) {
 .show {
 	display: table-row;
 }
-/* .new-row-class {
-	display: table-row;
-} */
