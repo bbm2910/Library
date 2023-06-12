@@ -22,47 +22,6 @@ closeFormButton.addEventListener("click", function () {
 // Add read-unread status to every book
 const tableRows = document.querySelectorAll(".tb-books tr");
 
-// Loop through each table row
-
-//Show and hide and delete books
-readBooksBtn.addEventListener("click", function () {
-    tableRows.forEach((row) => {
-        // Get the read status cell and value
-        const readStatusCell = row.querySelector("td:nth-child(4)");
-        const readStatus = readStatusCell.textContent;
-
-        if (readStatus === "Unread") {
-            row.classList.add("hide");
-            row.classList.remove("show");
-        } else if (readStatus === "Read") {
-            row.classList.remove("hide");
-            row.classList.add("show");
-        }
-    });
-});
-unreadBooksBtn.addEventListener("click", function () {
-    tableRows.forEach((row) => {
-        // Get the read status cell and value
-        const readStatusCell = row.querySelector("td:nth-child(4)");
-        const readStatus = readStatusCell.textContent;
-
-        if (readStatus === "Read") {
-            row.classList.add("hide");
-            row.classList.remove("show");
-        } else if (readStatus === "Unread") {
-            row.classList.remove("hide");
-            row.classList.add("show");
-        }
-    });
-});
-seeBooksBtn.addEventListener("click", function () {
-    tableRows.forEach((row) => {
-        // Get the read status cell and value
-        row.classList.add("show");
-    });
-});
-
-
 //Add books to the library
 let myLibrary = [];
 
@@ -73,11 +32,7 @@ function Book(title, author, pages, isRead) {
     this.isRead = isRead;
 
 }
-function addBookToLibrary() {
-    let title = document.querySelector("#title").value;
-    let author = document.querySelector("#author").value;
-    let pages = document.querySelector("#pages").value;
-    let isRead = document.querySelector("#isRead").checked;
+function addBookToLibrary(title, author, pages, isRead) {
 
     let newBook = new Book(title, author, pages, isRead);
     myLibrary.push(newBook);
@@ -85,10 +40,15 @@ function addBookToLibrary() {
     addRowToTable(newBook, isRead);
 }
 
+
+
 const libraryTableBody = document.querySelector('.tb-books');
 
 function addRowToTable(book, isRead) {
+
+
     const newRow = document.createElement('tr');
+    newRow.classList.add("new-row-class")
 
     const titleCell = document.createElement('td');
     titleCell.textContent = book.title;
@@ -130,15 +90,19 @@ function addRowToTable(book, isRead) {
 
     libraryTableBody.appendChild(newRow);
     // console.log(readStatusCell.textContent);
-    deleteRow();
     colorStatus();
+
 
 }
 
 // Submit a new book to the library
 submitButton.addEventListener("click", function () {
     event.preventDefault();
-    addBookToLibrary();
+    const title = document.querySelector("#title").value;
+    const author = document.querySelector("#author").value;
+    const pages = document.querySelector("#pages").value;
+    const isRead = document.querySelector("#isRead").checked;
+    addBookToLibrary(title, author, pages, isRead);
     overlay.style.display = "none";
     console.log(myLibrary);
 });
@@ -180,7 +144,61 @@ function deleteRow() {
 }
 deleteRow()
 
-login.addEventListener("click", function () {
 
+const book1 = new Book("llll", "ppppp", 12222, isRead);
+addBookToLibrary(book1)
+
+
+
+addBookToLibrary("The Foundation Trilogy", "Isaac Asimov", 679, false);
+addBookToLibrary("The Sven Hassel Collection", "	Sven Hassel", 4216, true);
+addBookToLibrary("Shogun", "James Clavell", 1152, false);
+addBookToLibrary("Dune", "Frank Herbert", 658, true);
+addBookToLibrary("The Catcher in the Rye", "J.D. Salinger", "224", true);
+addBookToLibrary("To Kill a Mockingbird", "Harper Lee", "336", false);
+
+//Show and hide and delete books
+readBooksBtn.addEventListener("click", function () {
+    let rows = document.querySelectorAll(".new-row-class");
+    rows.forEach((row) => {
+        const readStatusCell = row.querySelector("td:nth-child(4)");
+        const readStatus = readStatusCell.textContent;
+
+        if (readStatus === "Read") {
+            row.classList.add("show");
+            row.classList.remove("hide");
+        } else if (readStatus === "Unread") {
+            row.classList.remove("show");
+            row.classList.add("hide");
+        }
+    });
+});
+unreadBooksBtn.addEventListener("click", function () {
+    let rows = document.querySelectorAll(".new-row-class");
+    rows.forEach((row) => {
+        const readStatusCell = row.querySelector("td:nth-child(4)");
+        const readStatus = readStatusCell.textContent;
+
+        if (readStatus === "Read") {
+            row.classList.add("hide");
+            row.classList.remove("show");
+        } else if (readStatus === "Unread") {
+            row.classList.remove("hide");
+            row.classList.add("show");
+        }
+    });
+});
+seeBooksBtn.addEventListener("click", function () {
+    let rows = document.querySelectorAll(".new-row-class");
+    rows.forEach((row) => {
+        const readStatusCell = row.querySelector("td:nth-child(4)");
+        const readStatus = readStatusCell.textContent;
+        // Get the read status cell and value
+        row.classList.remove("hide");
+        row.classList.add("show");
+    });
+});
+
+login.addEventListener("click", function () {
     console.log(myLibrary);
 });

@@ -344,3 +344,6 @@ td:nth-child(1) {
 .show {
 	display: table-row;
 }
+/* .new-row-class {
+	display: table-row;
+} */
