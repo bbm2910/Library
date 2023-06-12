@@ -145,18 +145,6 @@ function deleteRow() {
 deleteRow()
 
 
-const book1 = new Book("llll", "ppppp", 12222, isRead);
-addBookToLibrary(book1)
-
-
-
-addBookToLibrary("The Foundation Trilogy", "Isaac Asimov", 679, false);
-addBookToLibrary("The Sven Hassel Collection", "	Sven Hassel", 4216, true);
-addBookToLibrary("Shogun", "James Clavell", 1152, false);
-addBookToLibrary("Dune", "Frank Herbert", 658, true);
-addBookToLibrary("The Catcher in the Rye", "J.D. Salinger", "224", true);
-addBookToLibrary("To Kill a Mockingbird", "Harper Lee", "336", false);
-
 //Show and hide and delete books
 readBooksBtn.addEventListener("click", function () {
     let rows = document.querySelectorAll(".new-row-class");
@@ -200,5 +188,17 @@ seeBooksBtn.addEventListener("click", function () {
 });
 
 login.addEventListener("click", function () {
-    console.log(myLibrary);
+    console.log(myLibrary[0].isRead);
 });
+
+
+addBookToLibrary("The Foundation Trilogy", "Isaac Asimov", 679, false);
+addBookToLibrary("The Sven Hassel Collection", "	Sven Hassel", 4216, true);
+addBookToLibrary("Shogun", "James Clavell", 1152, false);
+addBookToLibrary("Dune", "Frank Herbert", 658, true);
+addBookToLibrary("The Catcher in the Rye", "J.D. Salinger", "224", true);
+addBookToLibrary("To Kill a Mockingbird", "Harper Lee", "336", false);
+
+
+const book1 = new Book("llll", "ppppp", 12222,);
+addBookToLibrary(book1)
